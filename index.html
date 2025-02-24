@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="img/css.svg" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>MD RIEAD MIA</h1>
+                <p>And I'm a <span class="highlight">Frontend Developer</span></p>
+                <p class="description">I'm a professional Web Developer. I have developed many
+                    websites using HTML, CSS, JavaScript, React and more...</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#" class="btn primary">Download CV</a>
+                    <a href="#contact" class="btn secondary">Hire Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="img/img-perfil.png" alt="Perfil">
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About <span class="highlight">Me</span></h2>
+            <div class="about-content">
+                <div class="profile-image">
+                    <img src="img/img-perfil.png" alt="Perfil">
+                </div>
+                <div class="about-info">
+                    <div class="education">
+                        <h3>Education Qualification</h3>
+                        <div class="education-item">
+                            <h4>BSC in CSE</h4>
+                            <p>Institute: Leading University, Sylhet</p>
+                            <p>Session: 2018-22</p>
+                            <p>Result: Running 8th semester</p>
+                        </div>
+                        <!-- Adicione mais itens de educação aqui -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2>My <span class="highlight">Skills</span></h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <img src="img/html.png" alt="HTML" class="skill-icon">
+                    <div class="skill-info">
+                        <span>HTML 5</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                        <span>95%</span>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <img src="img/css.svg" alt="CSS" class="skill-icon">
+                    <div class="skill-info">
+                        <span>CSS 3</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                        <span>90%</span>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <img src="img/js.png" alt="JavaScript" class="skill-icon">
+                    <div class="skill-info">
+                        <span>JavaScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                        <span>85%</span>
+                    </div>
+                </div>
+
+                <div class="skill-item">
+                    <img src="img/react.png" alt="React" class="skill-icon">
+                    <div class="skill-info">
+                        <span>React</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                        <span>80%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <h2>My <span class="highlight">Services</span></h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="img/web-design-icon.svg" alt="Web Design">
+                    </div>
+                    <h3>Web Design</h3>
+                    <p>I am a professional Web Designer. I have designed many websites for my personal, business or
+                        other website...</p>
+                    <a href="#" class="btn">Hire Me</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="img/web-development-icon.svg" alt="Web Development">
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>I am a professional Web Developer. I have developed many websites using HTML, CSS, JavaScript,
+                        React...</p>
+                    <a href="#" class="btn">Hire Me</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="img/graphic-design-icon.svg" alt="Graphic Design">
+                    </div>
+                    <h3>Graphic Design</h3>
+                    <p>I am a professional Graphic Designer. I have designed many logos, banners, and other graphics...
+                    </p>
+                    <a href="#" class="btn">Hire Me</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <h2>Meus <span class="highlight">Projetos</span></h2>
+            <div class="portfolio-grid">
+                <a href="https://isaque-ds.github.io/busca-cep/" target="_blank" class="portfolio-item">
+                    <img src="img/busca-cep.png" alt="Web Design">
+                    <div class="portfolio-overlay">
+                        <h3>Web Design</h3>
+                        <p>UI/UX Design</p>
+                    </div>
+                </a>
+                <a href="#" target="_blank" class="portfolio-item">
+                    <img src="img/busca-cep.png" alt="Web Development">
+                    <div class="portfolio-overlay">
+                        <h3>Web Development</h3>
+                        <p>Full Stack Development</p>
+                    </div>
+                </a>
+                <a href="#" target="_blank" class="portfolio-item">
+                    <img src="img/busca-cep.png" alt="App Development">
+                    <div class="portfolio-overlay">
+                        <h3>App Development</h3>
+                        <p>Mobile Development</p>
+                    </div>
+                </a>
+                <a href="#" target="_blank" class="portfolio-item">
+                    <img src="img/busca-cep.png" alt="Graphic Design">
+                    <div class="portfolio-overlay">
+                        <img src="img/link-external-regular-96 1.svg" alt="link-externo">
+                        <h3>Graphic Design</h3>
+                        <p>Brand Identity</p>
+                    </div>
+                </a>
+                <a href="#" target="_blank" class="portfolio-item">
+                    <img src="img/busca-cep.png" alt="Digital Marketing">
+                    <div class="portfolio-overlay">
+                        <h3>Digital Marketing</h3>
+                        <p>Social Media</p>
+                    </div>
+                </a>
+                <a href="#" target="_blank" class="portfolio-item">
+                    <img src="img/busca-cep.png" alt="SEO">
+                    <div class="portfolio-overlay">
+                        <h3>SEO</h3>
+                        <p>Search Engine Optimization</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contato</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <img src="seu-logo.png" alt="Logo">
+                    <p>I am a professional Web Designer. I have designed many websites for my personal, business or
+                        other website...</p>
+                    <div class="social-links">
+                        <!-- Adicione seus links sociais aqui -->
+                    </div>
+                </div>
+                <form id="contact-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="First Name" required>
+                        <input type="text" placeholder="Last Name" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" placeholder="Phone" required>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <textarea placeholder="Message" required></textarea>
+                    <button type="submit" class="btn primary">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Copyright 2024. All Rights Reserved By RIEAD</p>
+        <a href="#home" class="scroll-top"><i class="fas fa-arrow-up"></i></a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
