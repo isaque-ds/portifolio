@@ -36,16 +36,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Formulário de contato
     const contactForm = document.getElementById('contact-form');
+
     if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            // Aqui você pode adicionar a lógica para enviar o formulário
-            const formData = new FormData(this);
-            console.log('Dados do formulário:', Object.fromEntries(formData));
-            alert('Mensagem enviada com sucesso!');
-            this.reset();
+        contactForm.addEventListener('submit', async function (e) {
+            e.preventDefault(); // Evita que a página recarregue
+
+            const formData = new FormData(contactForm);
+            const jsonData = {};
+
+            formData.forEach((value, key) => {
+                jsonData[key] = value;
+            });
+
+            try {
+                const response = await fetch("https://formspree.io/f/mbldvavv", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(jsonData)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert("Mensagem enviada com sucesso!");
+                    contactForm.reset();
+                } else {
+                    alert(`Erro ao enviar: ${result.error || "Tente novamente mais tarde."}`);
+                }
+            } catch (error) {
+                alert("Falha ao enviar a mensagem. Verifique sua conexão e tente novamente.");
+                console.error(error);
+            }
         });
     }
+
+
 
     // Animação de digitação para o título
     const typeWriter = (element, text, speed = 100) => {
@@ -66,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         typeWriter(title, title.textContent);
     }
 
-    // Adicione após o código existente dentro do DOMContentLoaded
+    // Parallax
     const addParallaxEffect = () => {
         document.addEventListener('mousemove', (e) => {
             const heroImage = document.querySelector('.hero-image');
@@ -80,33 +107,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addParallaxEffect();
 });
-document.getElementById("contact-form").addEventListener("submit", async function (event) {
-    event.preventDefault(); // Evita que a página recarregue
 
-    const formData = {
-        firstName: document.querySelector("input[name='firstName']").value,
-        lastName: document.querySelector("input[name='lastName']").value,
-        phone: document.querySelector("input[name='phone']").value,
-        email: document.querySelector("input[name='email']").value,
-        message: document.querySelector("textarea[name='message']").value
-    };
-
-    try {
-        const response = await fetch("https://formspree.io/f/mbldvavv", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formData)
-        });
-
-        if (!response.ok) {
-            throw new Error("Erro ao enviar a mensagem.");
-        }
-
-        alert("Mensagem enviada com sucesso!");
-    } catch (error) {
-        alert("Falha ao enviar a mensagem. Tente novamente.");
-        console.error(error);
-    }
-});
