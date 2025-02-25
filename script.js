@@ -80,3 +80,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addParallaxEffect();
 });
+document.getElementById("contact-form").addEventListener("submit", async function (event) {
+    event.preventDefault(); // Evita que a página recarregue
+
+    const formData = {
+        firstName: document.querySelector("input[name='firstName']").value,
+        lastName: document.querySelector("input[name='lastName']").value,
+        phone: document.querySelector("input[name='phone']").value,
+        email: document.querySelector("input[name='email']").value,
+        message: document.querySelector("textarea[name='message']").value
+    };
+
+    try {
+        const response = await fetch("https://formspree.io/f/mbldvavv", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (!response.ok) {
+            throw new Error("Erro ao enviar a mensagem.");
+        }
+
+        alert("Mensagem enviada com sucesso!");
+    } catch (error) {
+        alert("Falha ao enviar a mensagem. Tente novamente.");
+        console.error(error);
+    }
+});
